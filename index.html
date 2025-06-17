@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro de Transações | FEH PAY</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-dark text-white">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-black shadow-sm sticky-top">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">FEH PAY</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#">Início</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Metas</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Cadastro dos gastos etc -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-orange mb-4 text-center">Cadastrar Transação</h2>
+            <form id="formTransacao" class="row g-4">
+                <div class="col-md-6">
+                    <label for="tipo" class="form-label">Tipo de Transação</label>
+                    <select class="form-select" id="tipo" required>
+                        <option value="">Escolha...</option>
+                        <option value="entrada">Entrada</option>
+                        <option value="saida">Saída</option>
+                    </select>
+                </div>
+                <div class="col-md-6">
+                    <label for="data" class="form-label">Data</label>
+                    <input type="date" class="form-control" id="data" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="valor" class="form-label">Valor</label>
+                    <input type="number" class="form-control" id="valor" placeholder="R$" step="0.01" required>
+                </div>
+                <div class="col-md-6">
+                    <label for="categoria" class="form-label">Categoria</label>
+                    <select class="form-select" id="categoria" required>
+                        <option value="">Escolha...</option>
+                        <option value="alimentacao">Alimentação</option>
+                        <option value="transporte">Transporte</option>
+                        <option value="salario">Salário</option>
+                        <option value="educacao">Educação</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                </div>
+                <div class="col-12">
+                    <label for="descricao" class="form-label">Descrição</label>
+                    <textarea class="form-control" id="descricao" rows="3"
+                        placeholder="Detalhes da transação"></textarea>
+                </div>
+                <div class="col-12 text-center">
+                    <button type="submit" class="btn btn-primary px-4">Cadastrar Transação</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Gráfico -->
+    <div class="container my-4">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="dashboard-container">
+                    <h3 class="text-center text-warning mb-3">Resumo Financeiro do Mês</h3>
+                    <canvas id="graficoResumo" width="200" height="200"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- final -->
+    <footer class="bg-black text-center text-white py-4">
+        <div class="container">
+            <p class="mb-2">&copy; 2025 FEH PAY. Todos os direitos reservados.</p>
+            <div class="d-flex justify-content-center gap-3">
+                <a href="#" class="text-white"><i class="bi bi-instagram"></i></a>
+                <a href="#" class="text-white"><i class="bi bi-linkedin"></i></a>
+                <a href="#" class="text-white"><i class="bi bi-envelope-fill"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
